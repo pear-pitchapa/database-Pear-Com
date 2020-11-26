@@ -1,16 +1,16 @@
 <?php
 
 $conn = mysqli_init();
-mysqli_real_connect($conn, 'databasecommy01.mysql.database.azure.com', 'MasterM@databasecommy01', 'Mm093493', 'Database_Gear', 3306);
+mysqli_real_connect($conn, 'databasepearcom.mysql.database.azure.com', 'database_PearCom@databasepearcom', 'com_pear25', 'itflab', 3306);
 if (mysqli_connect_errno($conn))
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 
 
-$name = $_POST['name'];
-$comment = $_POST['comment'];
-$link = $_POST['link'];
+$name = $_POST['Name'];
+$comment = $_POST['Comment'];
+$link = $_POST['Link'];
 
 
 $sql = "INSERT INTO guestbook (Name , Comment , Link) VALUES ('$name', '$comment', '$link')";
