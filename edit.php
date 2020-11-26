@@ -1,7 +1,7 @@
 <?php
 
 $conn = mysqli_init();
-mysqli_real_connect($conn, 'databasecommy01.mysql.database.azure.com', 'MasterM@databasecommy01', 'Mm093493', 'Database_Gear', 3306);
+mysqli_real_connect($conn, 'databasepearcom.mysql.database.azure.com', 'database_PearCom@databasepearcom', 'com_pear25', 'Database_Gear', 3306);
 if (mysqli_connect_errno($conn))
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
@@ -12,11 +12,11 @@ $result = mysqli_query($conn, "SELECT * FROM GuestBook WHERE id='$id'");
 $row=mysqli_fetch_assoc($result);
 
 if(isset($_POST['submit'])){
-    $id = $_GET['id'];
-    $Name = $_POST['name'];
-    $Comment = $_POST['comment'];
-    $Link = $_POST['link'];
-    $update = "UPDATE guestbook set Name='$Name', Comment='$Comment', Link='$Link' Where id='$id' ";
+    $ID = $_GET['ID'];
+    $Name = $_POST['Name'];
+    $Comment = $_POST['Comment'];
+    $Link = $_POST['Link'];
+    $update = "UPDATE Guestbook set Name='$Name', Comment='$Comment', Link='$Link' Where ID='$ID' ";
 
     if(mysqli_query($conn, $update)){
         header("location:show.php");
